@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiva Shankar Adari — AI/ML Engineer</title>
+    <meta name="description"
+        content="Portfolio of Shiva Shankar Adari — AI/ML Engineer, Full Stack Developer, and Cloud Specialist building intelligent systems." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>SSA<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="https://drive.google.com/file/d/1FJKE9VXK8tAJPw5lMdIQJNY1apFukW6s/view?usp=drive_link"
+                target="_blank" class="btn-resume">
+                <i class="fas fa-file-arrow-down"></i> Resume
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-badge"><span class="pulse-dot"></span> Available for Opportunities</div>
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hi, I'm</span>
+                <span class="hero-name">Shiva Shankar<br />Adari</span>
+            </h1>
+            <div class="hero-roles">
+                <span class="role-static">I build </span>
+                <span class="role-dynamic" id="roleDynamic"></span>
+            </div>
+            <p class="hero-desc">
+                B.Tech AI student at GIET (2022–2026) crafting end-to-end ML pipelines, cloud-native applications, and
+                intelligent systems. Turning data into decisions and ideas into production.
+            </p>
+            <div class="hero-ctas">
+                <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> Explore Work</a>
+                <a href="#contact" class="btn-ghost"><i class="fas fa-paper-plane"></i> Let's Talk</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num" data-target="32">0</div>
+                    <div class="stat-lbl">Projects</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num" data-target="7">0</div>
+                    <div class="stat-lbl">Internships</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num" data-target="5">0</div>
+                    <div class="stat-lbl">Certifications</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num" data-target="1000">0</div>
+                    <div class="stat-lbl">Code Hours</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint"><span></span> Scroll Down</div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-avatar-wrap">
+                        <div class="about-avatar">
+                            <div class="avatar-inner">
+                                <i class="fas fa-brain avatar-icon"></i>
+                            </div>
+                            <div class="orbit orbit-1">
+                                <div class="orbit-dot"></div>
+                            </div>
+                            <div class="orbit orbit-2">
+                                <div class="orbit-dot"></div>
+                            </div>
+                            <div class="orbit orbit-3">
+                                <div class="orbit-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-info-cards">
+                        <div class="info-card"><i class="fas fa-graduation-cap"></i>
+                            <div><strong>B.Tech — Artificial Intelligence</strong><span>GIET College of Engineering,
+                                    2022–2026</span></div>
+                        </div>
+                        <div class="info-card"><i class="fas fa-briefcase"></i>
+                            <div><strong>Web Dev Intern @ SkillDzire</strong><span>Cloud Integration & Modern
+                                    Frameworks</span></div>
+                        </div>
+                        <div class="info-card"><i class="fas fa-chart-bar"></i>
+                            <div><strong>Data Analytics Intern @ SmartInternz</strong><span>Tableau Dashboards & BI
+                                    Reports</span></div>
+                        </div>
+                        <div class="info-card"><i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Andhra Pradesh, India</strong><span>Open to Remote & Relocate</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>I'm a <strong>tech-driven AI/ML engineer</strong> passionate about building intelligent systems
+                        that solve real-world problems. My journey spans from designing complex <strong>MLOps
+                            pipelines</strong> and training custom LLMs to shipping full-stack web applications and
+                        deploying services at scale on cloud infrastructure.</p>
+                    <p>With hands-on experience across <strong>7 internships</strong> in domains including Machine
+                        Learning, Computer Vision, NLP, Cloud, and Data Analytics, I bring both breadth and depth to
+                        every project I undertake.</p>
+                    <p>I thrive at the intersection of <strong>research and production</strong> — taking models from
+                        notebooks to deployed, monitored APIs that create real impact.</p>
+                    <div class="about-tags">
+                        <span>🤖 Machine Learning</span><span>👁️ Computer Vision</span><span>💬 NLP & LLMs</span>
+                        <span>☁️ Cloud (AWS/GCP)</span><span>🔁 MLOps</span><span>📊 Data Analytics</span>
+                        <span>🌐 Full Stack Dev</span><span>🐳 Docker/K8s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What I've Built</span>
+                <h2 class="section-title">Projects Dashboard</h2>
+            </div>
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="MLOps">MLOps</button>
+                <button class="filter-btn" data-filter="NLP">NLP / LLM</button>
+                <button class="filter-btn" data-filter="CV">Computer Vision</button>
+                <button class="filter-btn" data-filter="Healthcare">Healthcare AI</button>
+                <button class="filter-btn" data-filter="Web">Web Apps</button>
+                <button class="filter-btn" data-filter="Data">Data & Analytics</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
+            <div class="ongoing-header">
+                <span class="ongoing-badge"><i class="fas fa-circle-notch fa-spin"></i> Currently Building</span>
+                <h3>Ongoing Projects</h3>
+            </div>
+            <div class="projects-grid ongoing-grid" id="ongoingGrid"></div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What I Know</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-layout">
+                <div class="skills-bars">
+                    <div class="skill-group">
+                        <h3><i class="fas fa-code"></i> AI / ML & Programming</h3>
+                        <div class="skill-row" data-pct="95"><span>Python</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:95%"></div>
+                            </div><span class="pct">95%</span>
+                        </div>
+                        <div class="skill-row" data-pct="90"><span>TensorFlow / PyTorch</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:90%"></div>
+                            </div><span class="pct">90%</span>
+                        </div>
+                        <div class="skill-row" data-pct="88"><span>Scikit-learn / XGBoost</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:88%"></div>
+                            </div><span class="pct">88%</span>
+                        </div>
+                        <div class="skill-row" data-pct="85"><span>JavaScript / React</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:85%"></div>
+                            </div><span class="pct">85%</span>
+                        </div>
+                        <div class="skill-row" data-pct="80"><span>LangChain / RAG</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:80%"></div>
+                            </div><span class="pct">80%</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                        <div class="skill-row" data-pct="88"><span>Flask / FastAPI / Django</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:88%"></div>
+                            </div><span class="pct">88%</span>
+                        </div>
+                        <div class="skill-row" data-pct="82"><span>AWS / Google Cloud</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:82%"></div>
+                            </div><span class="pct">82%</span>
+                        </div>
+                        <div class="skill-row" data-pct="80"><span>Docker / Kubernetes</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:80%"></div>
+                            </div><span class="pct">80%</span>
+                        </div>
+                        <div class="skill-row" data-pct="90"><span>Git / GitHub</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:90%"></div>
+                            </div><span class="pct">90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3><i class="fas fa-database"></i> Data & Visualization</h3>
+                        <div class="skill-row" data-pct="85"><span>SQL / NoSQL (MongoDB)</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:85%"></div>
+                            </div><span class="pct">85%</span>
+                        </div>
+                        <div class="skill-row" data-pct="80"><span>Tableau / Power BI</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:80%"></div>
+                            </div><span class="pct">80%</span>
+                        </div>
+                        <div class="skill-row" data-pct="85"><span>Pandas / NumPy / Plotly</span>
+                            <div class="bar">
+                                <div class="bar-fill" style="--pct:85%"></div>
+                            </div><span class="pct">85%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-cloud">
+                    <h3>Tech Ecosystem</h3>
+                    <div class="tech-tags">
+                        <span style="--s:1.2">Python</span><span style="--s:1.1">TensorFlow</span><span
+                            style="--s:1.0">PyTorch</span>
+                        <span style="--s:0.9">LangChain</span><span style="--s:1.3">React</span><span
+                            style="--s:0.8">FastAPI</span>
+                        <span style="--s:1.0">Docker</span><span style="--s:0.9">Kubernetes</span><span
+                            style="--s:1.1">AWS</span>
+                        <span style="--s:0.8">MLflow</span><span style="--s:1.0">OpenCV</span><span
+                            style="--s:0.9">YOLOv5</span>
+                        <span style="--s:1.1">HuggingFace</span><span style="--s:0.8">Streamlit</span><span
+                            style="--s:1.0">MongoDB</span>
+                        <span style="--s:0.9">Pinecone</span><span style="--s:0.8">FAISS</span><span
+                            style="--s:1.0">Airflow</span>
+                        <span style="--s:0.9">Grafana</span><span style="--s:1.1">Tableau</span><span
+                            style="--s:0.8">spaCy</span>
+                        <span style="--s:1.0">MediaPipe</span><span style="--s:0.9">Transformers</span><span
+                            style="--s:1.0">Flask</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Where I've Worked</span>
+                <h2 class="section-title">Experience Timeline</h2>
+            </div>
+            <div class="timeline" id="timeline"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-left">
+                    <p class="contact-intro">I'm always open to exciting opportunities, collaborations, or just a good
+                        tech conversation. Drop me a message!</p>
+                    <div class="contact-links">
+                        <a href="mailto:shankar5adari@gmail.com" class="contact-link" id="email-link">
+                            <div class="cl-icon"><i class="fas fa-envelope"></i></div>
+                            <div><strong>Email</strong><span>shankar5adari@gmail.com</span></div>
+                        </a>
+                        <a href="tel:+917207109062" class="contact-link" id="phone-link">
+                            <div class="cl-icon"><i class="fas fa-phone"></i></div>
+                            <div><strong>Phone</strong><span>+91 72071 09062</span></div>
+                        </a>
+                        <a href="https://linkedin.com/in/shivashankaradari" target="_blank" class="contact-link"
+                            id="linkedin-link">
+                            <div class="cl-icon"><i class="fab fa-linkedin"></i></div>
+                            <div><strong>LinkedIn</strong><span>shivashankaradari</span></div>
+                        </a>
+                        <a href="https://github.com/ShankarAdari" target="_blank" class="contact-link" id="github-link">
+                            <div class="cl-icon"><i class="fab fa-github"></i></div>
+                            <div><strong>GitHub</strong><span>ShankarAdari</span></div>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" placeholder="Your Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" placeholder="your@email.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" placeholder="What's this about?" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary full-width" id="send-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo"><span class="logo-bracket">&lt;</span>SSA<span
+                        class="logo-bracket">/&gt;</span></span>
+                <p>Designed & Built by <strong>Shiva Shankar Adari</strong> &copy; 2026</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/ShankarAdari" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/shivashankaradari" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="mailto:shankar5adari@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box" id="modalBox">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-inner" id="modalInner"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
