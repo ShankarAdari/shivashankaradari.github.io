@@ -2,6 +2,126 @@
 // PROJECT DATA
 // ============================================================
 const projects = [
+    // ── LIVE PROJECTS (Elite Showcase) ──────────────────────
+    {
+        id: 101, isLive: true, filter: "Healthcare", status: "Completed",
+        title: "Curalink — AI Medical Research Assistant",
+        category: "Healthcare AI / RAG Agent",
+        desc: "A state-of-the-art AI-powered medical assistant that dynamically crawls and queries PubMed, OpenAlex, and ClinicalTrials databases. Employs advanced Retrieval-Augmented Generation (RAG) and custom NLP agents for precise medical literature synthesis.",
+        tech: ["React", "Node.js", "Express", "PubMed API", "OpenAlex API", "RAG", "Vector DB"],
+        features: ["Direct querying of PubMed and ClinicalTrials databases", "Intelligent context synthesis and text summarization", "Interactive chat interface for literature synthesis", "Automatic citation and reference extraction", "Modern glassmorphic and responsive interface"],
+        image: "https://cdn.dribbble.com/userupload/16548002/file/original-81cb1d02cdf0afdf38ddd6cd91beff57.png?resize=752x&vertical=center",
+        duration: "3 months",
+        github: "https://github.com/ShankarAdari/curalink",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/curalink/#/chat"
+    },
+    {
+        id: 102, isLive: true, filter: "NLP", status: "Completed",
+        title: "AI Job Agent — Automated Job Finder",
+        category: "NLP / Automation Agent",
+        desc: "A production-grade Next.js application that automates real-time job discovery and applications. Features an NLP-powered resume parser that extracts technical skills and matches them against active jobs using cosine similarity scoring.",
+        tech: ["Next.js", "React Context", "Vanilla CSS Modules", "NLP Parser", "Cosine Similarity", "Automation"],
+        features: ["Scans 6+ leading job platforms in real-time", "Extracts candidate skills from uploaded resumes", "Matches jobs with a strict match score threshold (>=70%)", "Beautiful glassmorphic dark-theme dashboard", "Verifiable real-time application links"],
+        image: "images/ai-job-agent.png",
+        duration: "2 months",
+        github: "https://github.com/ShankarAdari/ai-job-agent",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/ai-job-agent/"
+    },
+    {
+        id: 103, isLive: true, filter: "NLP", status: "Completed",
+        title: "Ecommerce RAG — Semantic Catalog Search",
+        category: "NLP / Generative AI",
+        desc: "An intelligent product discovery system utilizing Retrieval-Augmented Generation (RAG). Employs semantic search and vector database lookups to enable context-aware natural language shopping queries instead of static keyword filtering.",
+        tech: ["Python", "LangChain", "FAISS", "OpenAI API", "FastAPI", "React", "Vector Embeddings"],
+        features: ["Semantic search across product catalog databases", "Context-aware conversational product advisor", "High-performance vector database querying with FAISS", "Scalable FastAPI backend API endpoints", "Beautiful responsive product visualizer dashboard"],
+        image: "https://miro.medium.com/1*gQaUVJYzUHUa-DpEmNVeKA.gif",
+        duration: "3 months",
+        github: "https://github.com/ShankarAdari/ecommerce-rag",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/ecommerce-rag/"
+    },
+    {
+        id: 104, isLive: true, filter: "Data", status: "Completed",
+        title: "Binance Futures Testnet Trading Bot",
+        category: "Algorithmic Trading / FinTech",
+        desc: "A high-performance automated trading bot integrated with the Binance Futures Testnet. Executes algorithm-driven long and short positions by tracking technical indicators and market order book sentiment in real-time.",
+        tech: ["Python", "Binance API", "Pandas", "WebSocket", "Technical Analysis", "Docker"],
+        features: ["Real-time WebSocket data stream processing", "Algorithmic decision engines tracking MACD, RSI, and EMAs", "Automated long/short leverage order execution", "Advanced risk mitigation and automated stop-loss", "Comprehensive log tracking and performance audits"],
+        image: "images/binance-bot.png",
+        duration: "4 months",
+        github: "https://github.com/ShankarAdari/binance-futures-testnet-bot",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/binance-futures-testnet-bot/"
+    },
+    {
+        id: 105, isLive: true, filter: "Web", status: "Completed",
+        title: "My Cars Store — Premium Showroom",
+        category: "Web Application / E-Commerce",
+        desc: "An immersive, luxury vehicle e-commerce showroom that sets the standard for modern automotive commerce. Implements sleek layouts, dynamic catalog filtering, interactive vehicle visualizers, and test-drive scheduler integrations.",
+        tech: ["HTML5", "CSS3 Modules", "Vanilla JavaScript", "GSAP Animations", "SwiperJS", "Interactive Scheduling"],
+        features: ["Ultra-responsive and modern fluid design layout", "Immersive image and specifications visualizer slider", "Dynamic catalog sorting, filtering, and comparison tool", "Mock test-drive reservation scheduler flow", "Optimized image rendering for smooth loading speeds"],
+        image: "images/my-cars-store.png",
+        duration: "1.5 months",
+        github: "https://github.com/ShankarAdari/my-cars-store",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/my-cars-store/#"
+    },
+    {
+        id: 106, isLive: true, filter: "Healthcare", status: "Completed",
+        title: "HCP CRM — Medical Sales Dashboard",
+        category: "Healthcare AI / Sales CRM",
+        desc: "A highly specialized Healthcare Professional Customer Relationship Management (HCP-CRM) system. Built to optimize interactions between medical representatives and practitioners with integrated visit schedulers, analytics, and sales funnels.",
+        tech: ["React", "Redux Toolkit", "Chart.js", "Node.js", "Express", "MongoDB", "Auth0"],
+        features: ["HCP visit scheduling and interaction tracking", "Dynamic sales analytics dashboard with interactive charts", "Practitioner compliance and profile logs management", "Auto-generated monthly visit efficiency reports", "Secure user role authentication and data integrity logs"],
+        image: "images/hcp-crm.png",
+        duration: "3 months",
+        github: "https://github.com/ShankarAdari/hcp-crm",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/hcp-crm/#/"
+    },
+    {
+        id: 107, isLive: true, filter: "MLOps", status: "Completed",
+        title: "FuelRoute AI — Logistics Optimizer",
+        category: "Machine Learning / Logistics",
+        desc: "An intelligent route planner that minimizes logistics transit times and fuel expenses. Leverages regression algorithms for forecasting consumption and reinforcement learning models to determine highly optimal routes.",
+        tech: ["Python", "PyTorch", "Flask", "Docker", "Google Maps API", "Pandas", "Scikit-learn"],
+        features: ["Predicts vehicle-specific fuel consumption rates", "Reinforcement learning for calculating efficient transit routes", "Real-time geographical tracking and visualization", "REST API integration for external fleet services", "Containerized deployment and cloud-ready structure"],
+        image: "images/fuelroute-ai.png",
+        duration: "4 months",
+        github: "https://github.com/ShankarAdari/fuelroute-ai",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/fuelroute-ai/"
+    },
+    {
+        id: 108, isLive: true, filter: "MLOps", status: "Completed",
+        title: "Retail AI Pipeline — Forecasting Engine",
+        category: "MLOps / Supply Chain",
+        desc: "A production-grade machine learning operations (MLOps) pipeline designed for demand forecasting and inventory tracking. Orchestrates automated model training and testing cycles with robust monitoring architectures.",
+        tech: ["Apache Airflow", "MLflow", "Scikit-learn", "Docker", "AWS S3", "Prometheus", "Grafana"],
+        features: ["Automated ingestion and storage pipelines with S3", "Model retraining workflows orchestrated by Airflow", "Model version control and parameter auditing with MLflow", "Demand prediction utilizing Scikit-learn regressors", "System health monitoring dashboards using Grafana"],
+        image: "https://zoomchartswebstorage.blob.core.windows.net/template-gallery/20240110-152351-na-retail-supply-chain-and-sales-analysis-sushree-jena.webp",
+        duration: "3 months",
+        github: "https://github.com/ShankarAdari/retail-ai-pipeline",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "https://shankaradari.github.io/retail-ai-pipeline/"
+    },
+    {
+        id: 109, isLive: true, filter: "Web", status: "Completed",
+        title: "Go Auth — Secure Microservice",
+        category: "Web Security / Golang",
+        desc: "An industrial-grade authentication microservice implemented in Golang. Incorporates best-practice cryptography, stateless session handling via JSON Web Tokens, active rate-limiting structures, and persistent database configurations.",
+        tech: ["Golang", "Gin Web Framework", "JSON Web Tokens", "Redis", "Bcrypt Hashing", "SQLite"],
+        features: ["Secure password hashing with Bcrypt", "Stateless session authorization via JSON Web Tokens (JWT)", "High-performance access rate limiting powered by Redis", "Structured registration and sign-in REST endpoints", "Relational database persistence configuration with SQLite"],
+        image: "images/go-auth.png",
+        duration: "2 months",
+        github: "https://github.com/ShankarAdari/go-auth-assignment",
+        linkedin: "https://www.linkedin.com/in/shivashankaradari/",
+        live: "http://shankaradari.github.io/go-auth-assignment/"
+    },
+
+    // ── ALL PROJECTS (Filterable Portfolio Dashboard) ────────
     {
         id: 1, filter: "MLOps", status: "Completed",
         title: "End-to-End MLOps Pipeline",
@@ -212,7 +332,7 @@ const projects = [
         category: "AI Dev Tools",
         desc: "Advanced AI coding assistant that intelligently optimizes code for performance, explains complex logic in plain language, and generates production-ready code from natural language.",
         tech: ["Python", "OpenAI API", "LangChain", "FastAPI", "Docker"],
-        features: ["Code optimization for performance", "Step-by-step code explanations", "Natural language to code generation", "Multi-language support (Python, JS, Java…)", "IDE plugin integration support"],
+        features: ["Code optimization for performance", "Step-by-step code explanations", "Natural language to code generation", "Multi-language support (Python, JS, Java...)", "IDE plugin integration support"],
         image: "https://codia.ai/images/docs/getting-started/ai-code-generator/3-steps.png",
         duration: "4 months",
         github: "https://github.com/ShankarAdari/ai-code-explainer",

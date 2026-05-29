@@ -35,7 +35,7 @@ class Particle {
         this.speedX = (Math.random() - 0.5) * 0.3;
         this.speedY = (Math.random() - 0.5) * 0.3;
         this.opacity = Math.random() * 0.4 + 0.05;
-        this.color = Math.random() > 0.5 ? '0,217,255' : '139,92,246';
+        this.color = Math.random() > 0.5 ? '16,185,129' : '5,150,105';
     }
     update() {
         this.x += this.speedX; this.y += this.speedY;
@@ -57,7 +57,7 @@ function drawConnections() {
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 100) {
                 ctx.beginPath();
-                ctx.strokeStyle = `rgba(0,217,255,${0.05 * (1 - dist / 100)})`;
+                ctx.strokeStyle = `rgba(16,185,129,${0.05 * (1 - dist / 100)})`;
                 ctx.lineWidth = 0.5;
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -167,11 +167,12 @@ function buildCard(p) {
     const isOngoing = p.status === 'Ongoing';
     const ghBtn = p.github ? `<a href="${p.github}" target="_blank" class="p-link" title="GitHub"><i class="fab fa-github"></i></a>` : '';
     const liBtn = p.linkedin ? `<a href="${p.linkedin}" target="_blank" class="p-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>` : '';
+    const liveBtn = p.live ? `<a href="${p.live}" target="_blank" class="p-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>` : '';
     return `
     <div class="project-card reveal" data-id="${p.id}" data-filter="${p.filter}">
       <div class="project-img-wrap">
         <img class="project-img" src="${p.image}" alt="${p.title}" loading="lazy"
-          onerror="this.src='https://via.placeholder.com/400x200/0d0d1f/00d9ff?text=Project+${p.id}'" />
+          onerror="this.src='https://via.placeholder.com/400x200/0b0f19/10b981?text=Project+${p.id}'" />
         <span class="project-status-badge ${isOngoing ? 'ongoing' : ''}">${isOngoing ? '⟳ Ongoing' : '✓ Completed'}</span>
       </div>
       <div class="project-body">
@@ -180,20 +181,26 @@ function buildCard(p) {
         <p class="project-desc">${p.desc}</p>
         <div class="project-techs">${p.tech.slice(0, 4).map(t => `<span class="p-tech">${t}</span>`).join('')}${p.tech.length > 4 ? `<span class="p-tech">+${p.tech.length - 4}</span>` : ''}</div>
         <div class="project-footer">
-          <div class="project-links">${ghBtn}${liBtn}</div>
+          <div class="project-links">${ghBtn}${liBtn}${liveBtn}</div>
           <button class="view-more-btn" data-id="${p.id}">Details →</button>
         </div>
       </div>
     </div>`;
 }
 
-const completedProjects = projects.filter(p => p.status === 'Completed');
-const ongoingProjects = projects.filter(p => p.status === 'Ongoing');
+const liveProjects = projects.filter(p => p.isLive);
+const nonLiveProjects = projects.filter(p => !p.isLive);
+
+const completedProjects = nonLiveProjects.filter(p => p.status === 'Completed');
+const ongoingProjects = nonLiveProjects.filter(p => p.status === 'Ongoing');
+
+const liveGrid = document.getElementById('liveProjectsGrid');
 const grid = document.getElementById('projectsGrid');
 const ongoingGrid = document.getElementById('ongoingGrid');
 
-grid.innerHTML = completedProjects.map(buildCard).join('');
-ongoingGrid.innerHTML = ongoingProjects.map(buildCard).join('');
+if (liveGrid) liveGrid.innerHTML = liveProjects.map(buildCard).join('');
+if (grid) grid.innerHTML = completedProjects.map(buildCard).join('');
+if (ongoingGrid) ongoingGrid.innerHTML = ongoingProjects.map(buildCard).join('');
 
 // Re-observe new cards
 document.querySelectorAll('.project-card').forEach(el => revealObserver.observe(el));
@@ -236,6 +243,7 @@ const modalClose = document.getElementById('modalClose');
 function openModal(project) {
     const ghBtn = project.github ? `<a href="${project.github}" target="_blank" class="modal-btn modal-btn-gh"><i class="fab fa-github"></i> GitHub Repo</a>` : '';
     const liBtn = project.linkedin ? `<a href="${project.linkedin}" target="_blank" class="modal-btn modal-btn-li"><i class="fab fa-linkedin"></i> LinkedIn Post</a>` : '';
+    const liveBtn = project.live ? `<a href="${project.live}" target="_blank" class="modal-btn modal-btn-li" style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #34d399;"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : '';
     modalInner.innerHTML = `
     <img class="modal-hero-img" src="${project.image}" alt="${project.title}"
       onerror="this.style.display='none'" />
@@ -252,7 +260,7 @@ function openModal(project) {
     <ul class="modal-features">${project.features.map(f => `<li>${f}</li>`).join('')}</ul>
     <div class="modal-section-title"><i class="fas fa-tools"></i> Tech Stack</div>
     <div class="modal-tech-stack">${project.tech.map(t => `<span class="modal-tech">${t}</span>`).join('')}</div>
-    ${(ghBtn || liBtn) ? `<div class="modal-divider"></div><div class="modal-actions">${ghBtn}${liBtn}</div>` : ''}
+    ${(ghBtn || liBtn || liveBtn) ? `<div class="modal-divider"></div><div class="modal-actions">${liveBtn}${ghBtn}${liBtn}</div>` : ''}
   `;
     modalOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -298,4 +306,19 @@ document.getElementById('contactForm').addEventListener('submit', e => {
 document.querySelectorAll('.about-visual, .about-text, .info-card, .about-tags span').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
+});
+
+// ── Magnetic CTA Buttons Effect ─────────────────────────────
+document.querySelectorAll('.btn-primary, .btn-ghost, .btn-resume, .contact-link').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate3d(${x * 0.3}px, ${y * 0.3}px, 0) scale(1.02)`;
+        btn.style.transition = 'transform 0.1s ease';
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate3d(0, 0, 0)';
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
 });
